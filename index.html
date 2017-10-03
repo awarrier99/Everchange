@@ -12,21 +12,50 @@
 
     <body>
         <div name="Main_Menu" class="main">
-            <nav class="no-border z-depth-0">
-                <div class="nav-wrapper no-border">
-                    <a href="#!" class="brand-logo left"><img src= "Logo_White.png" /></a>
-                    <ul class="left hide-on-med-and-down">
-                        
-                    </ul>
-                    <div class="right valign-wrapper">
-                        <a class="right waves-effect waves-teal btn reg">Log In</a>
-                        <a class="right waves-effect waves-teal btn reg">Sign Up</a>
+            <div class="navbar-fixed">
+                <nav class="z-depth-0 nav-no-scroll">
+                    <div class="nav-wrapper">
+                        <a href="#!" class="left brand-logo"><img class="valign-abpos" src= "Logo_Color.png" /></a>
+
+                        <div class="right valign-wrapper">
+                            <a class="waves-effect waves-green btn reg">Log In</a>
+                            <a class="waves-effect waves-green btn reg">Sign Up</a>
+                        </div>
+
+                        <ul class="left hide-on-med-and-down space">
+                            <li class="li-no-scroll"><a href="#!!"><p>Page 1</p></a></li>
+                            <li class="li-no-scroll"><a href="#!!!"><p>Page 2</p></a></li>
+                            <li class="li-no-scroll"><a href="#!!!!"><p>Page 3</p></a></li>
+                        </ul>
                     </div>
-                </div>
-            </nav>
+                </nav>
+            </div>
+            <div class="text-content">
+                
+            </div>
+        </div>
+        
+        <div class="next container">
+            <p>Hello</p>
         </div>
 
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/code.js"></script>
+        <script type="text/javascript">
+            $(HTMLBodyElement).scroll(function() {
+                if ($(HTMLBodyElement).scrollTop() > 10) {
+                    $("nav").removeClass("nav-no-scroll");
+                    $("nav").addClass("nav-scroll");
+                    $("li").removeClass("li-no-scroll");
+                }
+                
+                else {
+                    $("nav").removeClass("nav-scroll");
+                    $("nav").addClass("nav-no-scroll");
+                    $("li").addClass("li-no-scroll");
+                }
+            });
+        </script>
     </body>
 </html>
