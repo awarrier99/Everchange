@@ -16,7 +16,7 @@ body {
     height: 100%;
     position: absolute;
     top: 0;
-    background: url(forest.jpg) no-repeat center;
+    background: url(images/forest.jpg) no-repeat center;
     background-size: cover;
 }
 
@@ -162,4 +162,38 @@ nav {
     top: 0;
     bottom: 0;
     margin: auto;
+}
+
+.text-content {
+    margin-top: 10%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+span {
+    font-size: 86pt;
+    text-align: center;
+    color: #6E3900;
+}
+
+h5 {
+    font-size: 32pt;
+    text-align: center;
+    color: #fff;
+}
+
+hr {
+    width: 60%;
+}
+
+.tbrown {
+    background: #6E3900 !important;
+}
+
+.carousel {
+    background: #000 !important;
+}
+
+.left_b {
+    float: left;
 }
