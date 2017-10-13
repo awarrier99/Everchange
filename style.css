@@ -254,7 +254,7 @@ span {
     height: 800px;
 }
 
-.left-half-div {
+.left-half-div-contain {
     float: left;
     width: 50%;
     height: 625px;
@@ -334,9 +334,6 @@ hr {
     background: rgba(30, 52, 133, .9) !important;
 }
 
-.carousel {
-    
-}
 
 .left_b {
     float: left;
