@@ -16,7 +16,7 @@ body {
     height: 105%;
     position: absolute;
     top: 0;
-    background: url(images/tree.jpg) no-repeat center;
+    background: url(../images/tree.jpg) no-repeat center;
     background-size: cover;
 }
 
@@ -358,18 +358,11 @@ hr {
     height: 100%;
 }
 
-.reg-form:before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
+.valign {
+    height: 50%;
+    width: 100%;
     position: absolute;
-    top: 0;
-}
-
-.valign-ghost {
-    display: inline-block;
-    vertical-align: middle;
+    top: 25%;
 }
 
 .form-container {
