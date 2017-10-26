@@ -34,6 +34,7 @@ nav {
     position: absolute;
     height: 12.5% !important;
     width: 100% !important;
+    z-index: 10;
 }
 
 .nav-no-scroll {
@@ -155,7 +156,7 @@ nav {
     height: 100%;
     width: 100%;
     position: absolute;
-    top: 100%;
+    top: 150%;
 }
 
 .valign-abpos {
@@ -353,3 +354,36 @@ hr {
   color: white;
 }
 
+.reg-form {
+    height: 100%;
+}
+
+.reg-form:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    position: absolute;
+    top: 0;
+}
+
+.valign-ghost {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.form-container {
+    position: relative;
+    z-index: 2000;
+    background: #fff;
+    border-radius: 5%;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(50, 50, 50, 0.6);
+    z-index: 1000;
+}
