@@ -101,7 +101,10 @@ nav {
 .space li a {
     position: relative;
     margin: 0;
+    padding: 0;
     height: 100% !important;
+    width: 100%;
+    display: table;
 }
 
 .space li a p {
@@ -121,6 +124,14 @@ nav {
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     -o-transition: 0.5s;
+}
+
+.space li a span {
+    display: table-cell;
+    font-size: 14pt;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
 }
 
 .space li a:hover p {
