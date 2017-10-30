@@ -224,10 +224,6 @@
                     $("li").addClass("li-no-scroll");
                 }
                 
-                if (showing) {
-                    $(".main").css({position: fixed});
-                }
-                
                 $(".log-form").hide();
             });
             
@@ -237,15 +233,16 @@
             
             $("#sign_up").click(function() {
                 $(".overlay").show();
-                $(".reg-form").show();
-                showing = true;
-                curscroll = $(HTMLBodyElement).scrollTop();
+                $("#get_started").hide();
+                $(".reg-form").fadeIn("medium");
+                $("body").css("overflowY", "hidden");
             });
             
             $(".overlay").click(function() {
                 $(".overlay").hide();
-                $(".reg-form").hide();
-                showing = false;
+                $("#get_started").show();
+                $(".reg-form").fadeOut("medium");
+                $("body").css("overflowY", "auto");
             });
             
             $("#log_in").click(function(e) {
@@ -253,7 +250,7 @@
                 var form = $("#log_form");
                 var btn = $("#log_in");
                 var btnpos = btn.offset();
-                $(".log-form").toggle();
+                $(".log-form").fadeIn("medium");
                 var fwidth = form.width();
                 var bwidth = btn.width();
                 var offset = (fwidth - bwidth) / 2;
@@ -262,7 +259,7 @@
             });
             
             $(HTMLBodyElement).click(function() {
-                $(".log-form").hide();
+                $(".log-form").fadeOut("medium");
             });
             
             $(".carousel").click(function() {
