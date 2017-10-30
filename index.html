@@ -31,10 +31,16 @@
                                     <label for="pass">Password</label>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col s6 offset-s3">
+                                    <button class="btn waves-effect waves-light green accent-4" type="submit" name="action">Go</button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
+            
             <div class="navbar-fixed">                
                 <nav class="z-depth-0 nav-no-scroll">
                     <div class="nav-wrapper">
@@ -54,6 +60,7 @@
                     </div>
                 </nav>
             </div>
+            
             <div class="text-content">
                 <span>Everchange</span>
                 <h5>Make A Difference With Your Spare Change</h5>
@@ -109,7 +116,7 @@
                         </div>
                         <div class="row">
                             <div class="col s4 offset-s4">
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
+                                <button class="btn waves-effect waves-light green accent-4" type="submit" name="action">Submit</button>
                             </div>
                         </div>
                     </form>
@@ -193,6 +200,9 @@
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <script type="text/javascript" src="js/code.js"></script>
         <script type="text/javascript">
+            var showing = false;
+            var curscroll = 0;
+            
             $(document).ready(function() {
                 setInterval(function() {$(".carousel").carousel('next');}, 4000);
                 $(".carousel").carousel();
@@ -201,7 +211,7 @@
                 $(".log-form").hide();
             });
             
-            $(HTMLBodyElement).scroll(function() {
+            $(HTMLBodyElement).scroll(function(e) {
                 if ($(HTMLBodyElement).scrollTop() > 10) {
                     $("nav").removeClass("nav-no-scroll");
                     $("nav").addClass("nav-scroll");
@@ -214,6 +224,10 @@
                     $("li").addClass("li-no-scroll");
                 }
                 
+                if (showing) {
+                    $(".main").css({position: fixed});
+                }
+                
                 $(".log-form").hide();
             });
             
@@ -224,13 +238,14 @@
             $("#sign_up").click(function() {
                 $(".overlay").show();
                 $(".reg-form").show();
-                $("body").css("overflowY", "hidden");
+                showing = true;
+                curscroll = $(HTMLBodyElement).scrollTop();
             });
             
             $(".overlay").click(function() {
                 $(".overlay").hide();
                 $(".reg-form").hide();
-                $("body").css("overflowY", "auto");
+                showing = false;
             });
             
             $("#log_in").click(function(e) {
@@ -243,11 +258,19 @@
                 var bwidth = btn.width();
                 var offset = (fwidth - bwidth) / 2;
                 $(".log-form").offset({top: btnpos.top + 50});
-                form.offset({left: btnpos.left - offset});
+                form.offset({left: btnpos.left - offset + (parseFloat(btn.css("marginRight")) * 2)});
             });
             
             $(HTMLBodyElement).click(function() {
                 $(".log-form").hide();
+            });
+            
+            $(".carousel").click(function() {
+                $(HTMLBodyElement).trigger("click");
+            })
+            
+            $("#log_form").click(function(e) {
+                e.stopPropagation();
             });
         </script>
     </body>

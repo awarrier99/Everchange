@@ -376,6 +376,7 @@ hr {
     z-index: 2000;
     background: #fff;
     border-radius: 5%;
+    border: 2px solid #00c853;
     margin: 0;
     padding: 0;
 }
