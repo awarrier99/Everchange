@@ -355,21 +355,29 @@ hr {
 }
 
 .reg-form {
-    height: 100%;
+}
+
+.log-form {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .valign {
-    height: 50%;
+    height: 75%;
     width: 100%;
     position: absolute;
-    top: 25%;
+    top: 12.5%;
 }
 
 .form-container {
-    position: relative;
+    position: absolute;
     z-index: 2000;
     background: #fff;
     border-radius: 5%;
+    margin: 0;
+    padding: 0;
 }
 
 .overlay {
@@ -380,3 +388,4 @@ hr {
     background: rgba(50, 50, 50, 0.6);
     z-index: 1000;
 }
+

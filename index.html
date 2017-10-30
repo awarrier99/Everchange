@@ -15,28 +15,27 @@
         <div class="overlay">
         </div>
         <div name="Main_Menu" class="main">
-            <div class="navbar-fixed">
-                <div id="log_form">
-                    <div class="row">
-                        <div class="col s2 offset-s8 form-container">
-                            <form>
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="username" type="text" class="validate">
-                                        <label for="username">Username</label>
-                                    </div>
+            <div class="log-form">
+                <div class="row">
+                    <div id="log_form" class="col s2 offset-s8 form-container">
+                        <form>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="username" type="text" class="validate">
+                                    <label for="username">Username</label>
                                 </div>
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="pass" type="password" class="validate">
-                                        <label for="pass">Password</label>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="pass" type="password" class="validate">
+                                    <label for="pass">Password</label>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                
+            </div>
+            <div class="navbar-fixed">                
                 <nav class="z-depth-0 nav-no-scroll">
                     <div class="nav-wrapper">
                         <a href="#!" class="left brand-logo"><img class="valign-abpos" src= "images/Logo_Color.png" /></a>
@@ -50,7 +49,7 @@
                             <li class="li-no-scroll"><a href="#!!"><p>Charities</p></a></li>
                             <li class="li-no-scroll"><a href="#!!!"><p>Apply</p></a></li>
                             <li class="li-no-scroll"><a href="#!!!!"><p>About</p></a></li>
-                            <li class="li-no-scroll"><a href="!!!!!"><p>Contact</p></a></li>
+                            <li class="li-no-scroll"><a href="#!!!!!"><p>Contact</p></a></li>
                         </ul>
                     </div>
                 </nav>
@@ -58,7 +57,7 @@
             <div class="text-content">
                 <span>Everchange</span>
                 <h5>Make A Difference With Your Spare Change</h5>
-                <a class="waves-effect waves-light btn-large green accent-4 z-depth-5">Get Started</a>
+                <a class="waves-effect waves-light btn-large green accent-4 z-depth-5" id="get_started">Get Started</a>
                 <br />
                 <br />
                 <hr />
@@ -74,8 +73,8 @@
             </div>
         </div>
         
-        <div class="reg-form">
-            <div class="row valign">
+        <div class="reg-form valign">
+            <div class="row">
                 <div class="col s4 offset-s4 form-container">
                     <form>
                         <div class="row">
@@ -199,6 +198,7 @@
                 $(".carousel").carousel();
                 $(".overlay").hide();
                 $(".reg-form").hide();
+                $(".log-form").hide();
             });
             
             $(HTMLBodyElement).scroll(function() {
@@ -213,16 +213,41 @@
                     $("nav").addClass("nav-no-scroll");
                     $("li").addClass("li-no-scroll");
                 }
+                
+                $(".log-form").hide();
+            });
+            
+            $("#get_started").click(function() {
+                $("#sign_up").trigger("click");
             });
             
             $("#sign_up").click(function() {
                 $(".overlay").show();
                 $(".reg-form").show();
+                $("body").css("overflowY", "hidden");
             });
             
             $(".overlay").click(function() {
                 $(".overlay").hide();
                 $(".reg-form").hide();
+                $("body").css("overflowY", "auto");
+            });
+            
+            $("#log_in").click(function(e) {
+                e.stopPropagation();
+                var form = $("#log_form");
+                var btn = $("#log_in");
+                var btnpos = btn.offset();
+                $(".log-form").toggle();
+                var fwidth = form.width();
+                var bwidth = btn.width();
+                var offset = (fwidth - bwidth) / 2;
+                $(".log-form").offset({top: btnpos.top + 50});
+                form.offset({left: btnpos.left - offset});
+            });
+            
+            $(HTMLBodyElement).click(function() {
+                $(".log-form").hide();
             });
         </script>
     </body>
