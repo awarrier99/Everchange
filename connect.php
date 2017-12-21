@@ -7,7 +7,7 @@ function open()
     $dbpass = "MYSQLPass1399";
     $db = "everchange_login";
     
-    $conn = new mysqli($dbhost, $dbuser, $dbpass, $db) or die("Connection failed: %s\n", $conn -> error);
+    $conn = new mysqli($dbhost, $dbuser, $dbpass, $db) or die("Connection failed: %s\n". $conn -> error);
     
     return $conn;
 }

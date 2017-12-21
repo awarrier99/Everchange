@@ -376,10 +376,10 @@ hr {
 }
 
 .valign {
-    height: 75%;
+    height: 70%;
     width: 100%;
     position: absolute;
-    top: 12.5%;
+    top: 15%;
 }
 
 .form-container {
@@ -399,5 +399,10 @@ hr {
     top: 0;
     background: rgba(50, 50, 50, 0.6);
     z-index: 1000;
+}
+
+.sub_btn {
+    margin: 0 auto;
+    padding: 0;
 }
 

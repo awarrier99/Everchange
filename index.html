@@ -83,28 +83,34 @@
         <div class="reg-form valign">
             <div class="row">
                 <div class="col s4 offset-s4 form-container">
-                    <form>
+                    <form action="register.php" method="post">
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="first_name" type="text" class="validate">
+                                <input id="first_name" name="first_name" type="text" class="validate">
                                 <label for="first_name">First Name</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="last_name" type="text" class="validate">
+                                <input id="last_name" name="last_name" type="text" class="validate">
                                 <label for="last_name">Last Name</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="email" type="text" class="validate">
+                                <input id="username" name="username" type="text" class="validate">
+                                <label for="username">Username</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email" name="email" type="text" class="validate">
                                 <label for="email">Email</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="pass" type="password" class="validate">
+                                <input id="pass" name="pass" type="password" class="validate">
                                 <label for="pass">Password</label>
                             </div>
                         </div>
@@ -116,7 +122,7 @@
                         </div>
                         <div class="row">
                             <div class="col s4 offset-s4">
-                                <button class="btn waves-effect waves-light green accent-4" type="submit" name="action">Submit</button>
+                                <button class="btn waves-ffect waves-light green accent-4" type="submit" name="action">Register</button>
                             </div>
                         </div>
                     </form>
